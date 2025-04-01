@@ -6,10 +6,6 @@ A apple search ads attribution plugin for flutter
 
 1、Add the AdServices Framework to Your Xcode Project
 
-2、Add the AdSupport Framework to Your Xcode Project
-
-3、Add the AppTrackingTransparency Framework to Your Xcode Project
-
 ## Flutter
 
 How to use

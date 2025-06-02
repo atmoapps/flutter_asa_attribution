@@ -26,7 +26,7 @@ android {
         namespace 'com.imlian.flutter_asa_attribution'
     }
     
-    compileSdkVersion 30
+    compileSdkVersion 35
 
     defaultConfig {
         minSdkVersion 16

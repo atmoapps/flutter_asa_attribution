@@ -1,3 +1,7 @@
+## 1.1.0
+
+* Improved error handling on iOS.
+
 ## 0.0.4
 
 * Remove deprecated iAd-related APIs.

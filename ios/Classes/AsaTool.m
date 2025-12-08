@@ -1,6 +1,7 @@
 #import "AsaTool.h"
 #import <AdServices/AdServices.h>
-#import <AppTrackingTransparency/AppTrackingTransparency.h>
+
+
 
 @implementation AsaTool
 

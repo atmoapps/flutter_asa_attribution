@@ -20,14 +20,13 @@
 
 + (void)requestAttributionWithComplete:(void(^)(NSDictionary * _Nullable data, NSError * _Nullable error))complete {
     if (@available(iOS 14.3, *)) {
-        NSError *error;
         NSString *token = [self attributionToken];
 
         if (token.length > 0) {
             [self requestAttributionWithToken:token complete:complete];
         } else {
             if (complete) {
-                complete(nil, error ?: [NSError errorWithDomain:@"app" code:-1 userInfo:@{NSLocalizedDescriptionKey: @"Failed to retrieve attribution token"}]);
+                complete(nil, [NSError errorWithDomain:@"app" code:-1 userInfo:@{NSLocalizedDescriptionKey: @"Failed to retrieve attribution token"}]);
             }
         }
     } else {
@@ -57,7 +56,7 @@
 
         dispatch_async(dispatch_get_main_queue(), ^{
             if (complete) {
-                complete(result ?: @{}, jsonError);
+                complete(result, jsonError);
             }
         });
     }];

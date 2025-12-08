@@ -15,10 +15,10 @@
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   if ([@"requestAttributionDetails" isEqualToString:call.method]) {
       [AsaTool requestAttributionWithComplete:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
-          if (data) {
-              result(data);
+          if (error) {
+              result([FlutterError errorWithCode:@"FAILED" message:error.localizedDescription details:error.localizedFailureReason]);
           } else {
-              result([FlutterError errorWithCode:@"FAILED" message:error.localizedFailureReason details:nil]);
+              result(data);
           }
       }];
   } else if ([@"attributionToken" isEqualToString:call.method]) {
